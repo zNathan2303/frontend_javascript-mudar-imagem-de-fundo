@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-image: url(./img/cotia.jpg);
+}
+
+body {
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    background-image: var(--bg-image);
+    background-size: cover;
+}
+
+.content {
+    flex-direction: column;
+    display: flex;
+    gap: 16px;
+}
+
+.cidade {
+    font-size: 3rem;
+    text-align: center;
+    width: 350px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.botoes button {
+    font-size: 2rem;
+    width: 150px;
+}
