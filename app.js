@@ -1,25 +1,17 @@
 'use strict'
 
 const botaoMostrarImagem = document.getElementById('imagem')
-const botaoGerarImagemAuto = document.getElementById('auto')
+const botaoMostrarImagemAuto = document.getElementById('auto')
 
 function mostrarImagem() {
+    document.documentElement.style.setProperty('--bg-animation', 'none')
     const imagem = document.getElementById('cidade').value
     document.documentElement.style.setProperty('--bg-image', ('url(./img/' + imagem + '.jpg)'))
 }
 
-function gerarImagemAuto() {
-    const cidades = [
-        'url(./img/barueri.jpg)',
-        'url(./img/carapicuiba.jpg)',
-        'url(./img/cotia.jpg)',
-        'url(./img/itapevi.jpg)',
-        'url(./img/jandira.jpg)'
-    ]
-
-    const randomIndex = Math.floor(Math.random() * cidades.length)
-    document.documentElement.style.setProperty('--bg-image', cidades[randomIndex])
+function mostrarImagemAuto() {
+    document.documentElement.style.setProperty('--bg-animation', 'slider 20s infinite, fade 4s')
 }
 
 botaoMostrarImagem.addEventListener('click', mostrarImagem)
-botaoGerarImagemAuto.addEventListener('click', gerarImagemAuto)
+botaoMostrarImagemAuto.addEventListener('click', mostrarImagemAuto)

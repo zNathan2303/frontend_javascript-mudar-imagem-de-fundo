@@ -5,7 +5,8 @@
 }
 
 :root {
-    --bg-image: url(./img/cotia.jpg);
+    --bg-image: none;
+    --bg-animation: none;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
     place-content: center;
     background-image: var(--bg-image);
     background-size: cover;
+    animation: var(--bg-animation);
 }
 
 .content {
@@ -36,4 +38,47 @@ body {
 .botoes button {
     font-size: 2rem;
     width: 150px;
+}
+
+@keyframes slider {
+
+    0%,
+    20% {
+        background-image: url(./img/barueri.jpg);
+    }
+
+    21%,
+    40% {
+        background-image: url(./img/carapicuiba.jpg);
+    }
+
+    41%,
+    60% {
+        background-image: url(./img/cotia.jpg);
+    }
+
+    61%,
+    80% {
+        background-image: url(./img/itapevi.jpg);
+    }
+
+    81%,
+    100% {
+        background-image: url(./img/jandira.jpg);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    15%,
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
