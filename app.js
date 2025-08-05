@@ -6,7 +6,22 @@ const botaoMostrarImagemAuto = document.getElementById('auto')
 function mostrarImagem() {
     document.documentElement.style.setProperty('--bg-animation', 'none')
     const imagem = document.getElementById('cidade').value
-    document.documentElement.style.setProperty('--bg-image', ('url(./img/' + imagem + '.jpg)'))
+    
+    if(!isNaN(imagem)){
+        const cidades = [
+            'url(./img/barueri.jpg)',
+            'url(./img/carapicuiba.jpg)',
+            'url(./img/cotia.jpg)',
+            'url(./img/itapevi.jpg)',
+            'url(./img/jandira.jpg)'
+        ]
+
+        document.documentElement.style.setProperty('--bg-image', (cidades[imagem - 1]))
+
+    }else{
+        document.documentElement.style.setProperty('--bg-image', ('url(./img/' + imagem + '.jpg)'))
+    }
+
 }
 
 function mostrarImagemAuto() {
